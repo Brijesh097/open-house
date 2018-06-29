@@ -4,11 +4,11 @@
 
 	<div class="row">
 
-		<div class="col-md-2">
+		<div class="col-md-1">
 			{{-- Just some spacing --}}
 		</div>
 
-		<div class="col-md-8">
+		<div class="col-md-10">
 			<div class="card">
 				<h3 class="card-header"><strong>Create Listings</strong></h3>
 				{{-- <hr id="hr-style-one"> --}}
@@ -37,10 +37,11 @@
 						</div>
 						<div class="form-group">
 						  {{Form::label('bio', 'Bio')}}
-						  {{Form::textarea('bio', '', ['class' => 'form-control', 'placeholder' => 'Type here...', 'rows' => '6'])}}
+						  {{Form::textarea('bio', '', ['class' => 'form-control', 'placeholder' => 'Type here...', 'rows' => '3'])}}
 						</div>
 						<div>
 						  {{Form::submit('DONE', ['class'=> 'btn btn-dark'])}}
+						  <a href="/dashboard"><button type="button" class="btn btn-outline-dark float-right">BACK</button></a>
 						</div>
 					{!! Form::close() !!}
 				</div>
@@ -48,7 +49,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-2">
+		<div class="col-md-1">
 			{{-- Just some spacing --}}
 		</div>
 
