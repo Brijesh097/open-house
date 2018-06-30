@@ -34,14 +34,23 @@
                         <thead class="thead-dark">
                             <th>Name</th>
                             <th>Email ID</th>
-                            <th>Phone</th>
+                            <th></th>
+                            <th></th>
                         </thead>
                         <tbody>
                             @foreach($listings as $listing)
                                 <tr>
                                     <td>{{ $listing->name }}</td>
                                     <td>{{ $listing->email }}</td>
-                                    <td>{{ $listing->phone }}</td>
+                                    <td><a class="btn btn-outline-secondary" href="/listing/{{ $listing->id }}/edit"><strong>EDIT</strong></a></td>
+                                    <td>
+                                        {!! Form::open(['action' => ['ListingsController@destroy', $listing->id], 'method' => 'POST', 'class' => '', 'onsubmit' => 'return confirm("Are you sure?")']) !!}
+                                            <div>
+                                                {{Form::hidden('_method', 'DELETE')}}
+                                                {{Form::submit('DELETE', ['class'=> 'btn btn-outline-danger font-weight-bold'])}}
+                                            </div>
+                                        {!! Form::close() !!}
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
